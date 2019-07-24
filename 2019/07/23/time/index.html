@@ -113,24 +113,24 @@
 <h1 id="三-建立模型"><a href="#三-建立模型" class="headerlink" title="三.建立模型"></a>三.建立模型</h1><h2 id="3-1-数据预处理-amp-平稳性识别"><a href="#3-1-数据预处理-amp-平稳性识别" class="headerlink" title="3.1 数据预处理&amp;平稳性识别"></a>3.1 数据预处理&amp;平稳性识别</h2><p>设$P_t $为制造业销售值序列，由于对数值拥有可加性等良好的统计特征，同时又可以削弱数据的异方差和共线性，故成为多数金融研究的主要对象。销售值的对数差分$r_t$定义为：</p>
 <script type="math/tex; mode=display">
 \\r_t=lnP_t-lnP_{t-1}</script><p>销售值时间序列图如图1所示：</p>
-<p><div align="center"><img src="C:\Users\m\Documents\陆天航的R文件\时间序列\price.png"></div></p>
+<p><div align="center"><img src="/.com//Users\m\Documents\陆天航的R文件\时间序列\price.png"></div></p>
 <p><center>图1:销售值时间序列图</center><br>销售值对数值时间序列图如图2所示：</p>
-<p><div align="center"><img src="C:\Users\m\Documents\陆天航的R文件\时间序列\logp.png"></div></p>
+<p><div align="center"><img src="/.com//Users\m\Documents\陆天航的R文件\时间序列\logp.png"></div></p>
 <p><center>图2:销售值对数值时间序列图</center><br>从图1，图2看出，销售值的时间序列含有一定的趋势项，故尝试采用一次差分转换为平稳序列。<br>销售值对数差分时间序列图如图3所示：</p>
-<p><div align="center"><img src="C:\Users\m\Documents\陆天航的R文件\时间序列\log_return.png"></div></p>
+<p><div align="center"><img src="/.com//Users\m\Documents\陆天航的R文件\时间序列\log_return.png"></div></p>
 <p><center>图3:对数收益率时间序列图</center><br>由上图可见，销售值时间序列具有明显的趋势变化，而对数差分则更接近于一个平稳过程。<br>对对数差分进行单位根检验(增强Dickey-Fuller检验)：<br>|Dickey-Fuller |Lag order | p-value |<br>| —- | —- | —- |<br>|-6.0997|6|0.01|<br>p值小于给定置信水平(0.05)拒绝预原假设。</p>
 <h2 id="3-2-模型识别"><a href="#3-2-模型识别" class="headerlink" title="3.2 模型识别"></a>3.2 模型识别</h2><p>对数差分的acf：</p>
-<p><div align="center"><img src="C:\Users\m\Documents\陆天航的R文件\时间序列\log_return_acf.png"></div></p>
+<p><div align="center"><img src="/.com//Users\m\Documents\陆天航的R文件\时间序列\log_return_acf.png"></div></p>
 <p><center>图4:对数差分acf图</center><br>从acf来看，第2阶和第3阶是显著的，且3阶以后显著为0，采用3阶的MA模型具有一定的合理性，再来看样本的pacf：</p>
-<p><div align="center"><img src="C:\Users\m\Documents\陆天航的R文件\时间序列\log_return_pacf.png"></div></p>
+<p><div align="center"><img src="/.com//Users\m\Documents\陆天航的R文件\时间序列\log_return_pacf.png"></div></p>
 <p><center>图5:对数差分pacf图</center><br>从pacf来看，样本在滞后2，3阶显著，在滞后7阶显著，采用低阶AR模型也具有一定合理性。<br>样本eacf：</p>
-<p><div align="center"><img src="C:\Users\m\Documents\陆天航的R文件\时间序列\log_return_eacf.png"></div></p>
+<p><div align="center"><img src="/.com//Users\m\Documents\陆天航的R文件\时间序列\log_return_eacf.png"></div></p>
 <p><center>图6:对数差分eacf图</center><br>利用赤池信息准则判断选用的模型(均包含常数项)：<br>|模型 |AIC |<br>| —- | —- |<br>|MA(1)|-1748.65|<br>|MA(3)|-1787.89|<br>|ARMA(1,1)|-1760.68|<br>|ARMA(3,3)|-1790.11|<br>|ARMA(3,4)|-1801.7|<br>故使用ARMA(3,4)模型，但不排除低阶模型的可能性。</p>
 <h2 id="3-3-参数估计"><a href="#3-3-参数估计" class="headerlink" title="3.3 参数估计"></a>3.3 参数估计</h2><p>使用极大似然估计对ARMA(3,4)模型的参数进行拟合，得到：<br>||ar1|ar2 | ar3|ma1|ma2|ma3|ma4|intercept|<br>| —- | —- | —- | —- | —- | —- | —- | —- | —- |<br>|parameter|-0.7971|0.0224|0.5483|0.8775|0.1725|-0.1117|0.3253| 0.0026|<br>|se|0.1014|0.1425 |0.0972|0.1008|0.1562 |0.1319| 0.0625|0.0014|<br>其中，ar2,ma2,ma3及常数项不显著，故删除这些参数及常数项，再次训练模型，拟合的参数如下：<br>||ar1|ar2 | ar3|ma1|ma2|ma3|ma4|<br>| —- | —- | —- | —- | —- | —- | —- | —- |<br>|parameter|-0.6814|0|0.4190|0.6652|0|0| 0.3596|<br>|se|0.0816|0 |0.0492| 0.0662|0 |0|0.0705|<br>得到的AIC指标为 -1793.2，与之前相差不大。<br>故以上模型可表示为：</p>
 <script type="math/tex; mode=display">
 \\r_t=-0.6814r_{t-1}+0.4190r_{t-3}+\epsilon_t+0.6652\epsilon_{t-1}+0.3596\epsilon_{t-4}</script><p>其中$Var(\epsilon_t)=1.782\times e^{-4}$</p>
 <h2 id="3-4-模型诊断"><a href="#3-4-模型诊断" class="headerlink" title="3.4 模型诊断"></a>3.4 模型诊断</h2><p>残差，acf，及其Ljung-Box检验图分别如图7,8,9所示：</p>
-<p><div align="center"><img src="C:\Users\m\Documents\陆天航的R文件\时间序列\log_return_tsdiag.png"></div></p>
+<p><div align="center"><img src="/.com//Users\m\Documents\陆天航的R文件\时间序列\log_return_tsdiag.png"></div></p>
 <p><center>图7:残差图, 图8:残差acf图, 图9:残差Ljung-Box检验</center><br>从上面三张图可以看出，虽然在后期模型残差变化幅度增加且p值接近给定的置信水平，但基本符合理想情况。究其原因，是数据在时间为200处左右(图3)发生较大变化，当时正值2008年金融危机，对美国的传统制造业造成的巨大的冲击。</p>
 <h2 id="3-5-模型改进"><a href="#3-5-模型改进" class="headerlink" title="3.5 模型改进"></a>3.5 模型改进</h2><p>由模型诊断可以看出，该时间序列在2008年年底左右仍发生较大幅度的变化，为了消除金融危机对模型的影响，改用含干预分析的ARMA(3,4)模型从新建模。观察图3发现模型在第202个时间点发生骤降，而后数据呈现出缓慢上升的斜坡形状，故采用含一个单位时间延迟函数的干预模型。脉冲变量表示为:</p>
 <script type="math/tex; mode=display">
@@ -190,12 +190,12 @@ m_t=\delta m_{t-1}+\omega P_t^T</script><p>且假定$m_0=0$。<br>将均值函�
 <script type="math/tex; mode=display">
 \\r_t=-0.5869r_{t-1}+0.3914r_{t-3}+\epsilon_t+0.5314\epsilon_{t-1}+0.2073\epsilon_{t-4}+m_t</script><p>其中$m_t=0.4844m_{t-1}-0.0715P_t^T,Var(\epsilon_t)=1.577\times e^{-4}$</p>
 <p>将增加干预后的模型进行模型诊断，残差，acf，及其Ljung-Box检验图分别如图10,11,12所示：</p>
-<p><div align="center"><img src="C:\Users\m\Documents\陆天航的R文件\时间序列\log_return_tsdiag2.png"></div></p>
+<p><div align="center"><img src="/.com//Users\m\Documents\陆天航的R文件\时间序列\log_return_tsdiag2.png"></div></p>
 <p><center>图10:残差图, 图11:残差acf图, 图12:残差Ljung-Box检验</center><br>从残差图可以看出，改进后的模型残差已无较大异常，其白噪声的性质已经确认Ljung-Box检验中的p值已经远离了5%的水平虚线，无显著证据否定残差序列在统计上的独立性。<br>原模型和改进后模型对训练数据的拟合如图13所示:</p>
-<p><div align="center"><img src="C:\Users\m\Documents\陆天航的R文件\时间序列\log_return_real_predict.png"></div></p>
+<p><div align="center"><img src="/.com//Users\m\Documents\陆天航的R文件\时间序列\log_return_real_predict.png"></div></p>
 <p><center>图13:模型拟合图</center><br>从图中可见，改进后的模型在干预点附近比原模型有了更好的拟合结果。</p>
 <h2 id="3-6-模型预测"><a href="#3-6-模型预测" class="headerlink" title="3.6 模型预测"></a>3.6 模型预测</h2><p>将2018年1月1日-2019年1月1日的制造业的销售量做对数差分，作为模型的测试集，将建立好的干预模型预测测试集中的数据，每做完一次一步向前预测，将新的观测值加入模型的训练集，重新估计模型的参数。所得到的均方误差为1.64352e-06，模型的预测图如图14所示:</p>
-<p><div align="center"><img src="C:\Users\m\Documents\陆天航的R文件\时间序列\one_step_ahead.png"></div></p>
+<p><div align="center"><img src="/.com//Users\m\Documents\陆天航的R文件\时间序列\one_step_ahead.png"></div></p>
 <p><center>图14:模型预测图</center></p>
 <h1 id="四-模型总结"><a href="#四-模型总结" class="headerlink" title="四.模型总结"></a>四.模型总结</h1><p>本模型在‘统计’层面基本上完成了对美国传统制造业发展趋势的建模，在数据趋势层面，无论从acf值，pacf值还是从模型参数，都表明了销售值增长率具有3阶滞后相关的特点。在模型的预测层面，放弃了原始的多步预测方案，改为采用多次向前一步预测，使模型的预测能力具有大的提升，从而大体上预测了美国传统制造业在川普上台以及民粹主义兴起后颓势依旧的特征。同时模型在数据干预方面仍未能尽善尽美，只对于2008年年末的数据做了干预分析，而对2008年7月到年末的下滑走势未能完善地建模，有待建立更好的模型。</p>
 <h1 id="五-参考文献"><a href="#五-参考文献" class="headerlink" title="五.参考文献"></a>五.参考文献</h1></div>
