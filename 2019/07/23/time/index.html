@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head><meta name="generator" content="Hexo 3.9.0">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta content="yes" name="apple-mobile-web-app-capable">
+  <meta content="black" name="apple-mobile-web-app-status-bar-style">
+  <meta content="telephone=no" name="format-detection">
+  <meta name="keywords" content>
+  <meta name="description" content>
+  <meta name="author" content="Insist Wu">
+
+  
+  <title>time</title>
+  
+
+  <link rel="alternate" href="/atom.xml" title="虫小二的部落格" type="application/atom+xml">
+  <link rel="canonical" href="http://yoursite.com/2019/07/23/time/index.html">
+  <link rel="shortcut icon" href="/">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+
+  <body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><aside class="aside">
+  <nav class="aside-menu">
+    <ul class="aside-list">
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-wendang"></i><a href="/index.html" class="aside-menu-link" title="首页">首页</a></li>
+        
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-wendang1"></i><a href="/archives/index.html" class="aside-menu-link" title="所有文章">所有文章</a></li>
+        
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-biaoqian1"></i><a href="/tags/index.html" class="aside-menu-link" title="分类标签">分类标签</a></li>
+        
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-lianjie"></i><a href="/links/index.html" class="aside-menu-link" title="友情链接">友情链接</a></li>
+        
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-guanyu"></i><a href="/about/index.html" class="aside-menu-link" title="关于">关于</a></li>
+        
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-rss"></i><a href="/atom.xml" class="aside-menu-link" title="RSS">RSS</a></li>
+        
+      
+    </ul>
+  </nav>
+
+  <article class="aside-show">
+    
+    <div class="aside-show-wrapper">
+      <figure class="aside-avatar">
+        <img src="/img/avatar.png" alt="avatar" class="aside-avatar-img">
+        <figcaption class="aside-avatar-caption">
+          InsistWu
+          
+          <strong class="aside-avatar-STRONG">个人博客</strong>
+          
+        </figcaption>
+      </figure>
+      <!--
+      <p class="aside-show-description"></p>
+      <ul class="aside-show-info">
+        <li class="aside-show-item">
+          <a href="javascript: void(0);" class="aside-show-link" title="微信" target="_blank"><i class="aside-show-icon iconfont icon-iconfontweixin"></i></a>
+          <div class="aside-show-outside aside-show-outside_1">
+            <img class="aside-show-IMG aside-show-IMG_1" src="/img/weixin.png" alt="微信">
+          </div>
+        </li>
+        <li class="aside-show-item"><a href="https://www.zhihu.com/people/chenfengmingwu/activities" class="aside-show-link" title="知乎" target="_blank"><i class="aside-show-icon iconfont icon-zhihu"></i></a></li>
+        <li class="aside-show-item"><a href="https://github.com/Sam618" class="aside-show-link" title="github" target="_blank"><i class="aside-show-icon iconfont icon-github"></i></a></li>
+        <li class="aside-show-item">
+          <a href="javascript: void(0);" class="aside-show-link" title="QQ" target="_blank"><i class="aside-show-icon iconfont icon-qq"></i></a>
+          <div class="aside-show-outside">
+            <img class="aside-show-IMG" src="/img/qq.png" alt="QQ">
+          </div>
+        </li>
+      </ul>
+    -->
+    </div>
+  </article>
+</aside>
+
+
+    <article class="main" id="main">
+      <article class="post min-height">
+  
+  <header class="post-header">
+    
+    <h1 class="post-title">time</h1>
+    <p class="post-meta">
+      <span class="post-time">2019-07-23</span>
+      
+      
+    </p>
+    
+  </header>
+  <div class="post-content"><h1 id="时间序列建模及应用课程论文"><a href="#时间序列建模及应用课程论文" class="headerlink" title="时间序列建模及应用课程论文"></a>时间序列建模及应用课程论文</h1><p></p><p align="right">陆天航</p><p></p>
+<p></p><p align="right">2019/6/25</p><p></p>
+<h1 id="一-问题描述"><a href="#一-问题描述" class="headerlink" title="一.问题描述"></a>一.问题描述</h1><p>制造业是指通过手工或机器生产商品，并销售给顾客的产业，包括了从手工艺品到高科技等一系列产品。因此，制造业是衡量国家生产力重要指标，在国民经济中占有重要份额，是一个国家的国之重器<sup><a href="#fn_1" id="reffn_1">1</a></sup>。本文试图以时间序列为工具，以美国传统制造业为参考，分析美国传统制造业的销售状况。同时将建好的模型预测2018年1月1日-2019年1月1日的制造业的销售量。</p>
+<h1 id="二-数据说明及来源"><a href="#二-数据说明及来源" class="headerlink" title="二.数据说明及来源"></a>二.数据说明及来源</h1><p>本论文中模型的参考资料出自美联储理事会的官方网站<sup><a href="#fn_2" id="reffn_2">2</a></sup>,在建模过程中选取1992年1月1日-2017年12月12日的每月制造业销售总值数据进行训练，以2018年1月1日-2019年1月1日的数据进行预测。数据中制造业所包含的具体产业来源网站上做出了完整的定义<sup><a href="#fn_3" id="reffn_3">3</a></sup>,这里不再一一列举。所下载的数据为去除季节性趋势后的数据。</p>
+<h1 id="三-建立模型"><a href="#三-建立模型" class="headerlink" title="三.建立模型"></a>三.建立模型</h1><h2 id="3-1-数据预处理-amp-平稳性识别"><a href="#3-1-数据预处理-amp-平稳性识别" class="headerlink" title="3.1 数据预处理&amp;平稳性识别"></a>3.1 数据预处理&amp;平稳性识别</h2><p>设$P_t $为制造业销售值序列，由于对数值拥有可加性等良好的统计特征，同时又可以削弱数据的异方差和共线性，故成为多数金融研究的主要对象。销售值的对数差分$r_t$定义为：</p>
+<script type="math/tex; mode=display">
+\\r_t=lnP_t-lnP_{t-1}</script><p>销售值时间序列图如图1所示：</p>
+<p><div align="center"><img src="C:\Users\m\Documents\陆天航的R文件\时间序列\price.png"></div></p>
+<p><center>图1:销售值时间序列图</center><br>销售值对数值时间序列图如图2所示：</p>
+<p><div align="center"><img src="C:\Users\m\Documents\陆天航的R文件\时间序列\logp.png"></div></p>
+<p><center>图2:销售值对数值时间序列图</center><br>从图1，图2看出，销售值的时间序列含有一定的趋势项，故尝试采用一次差分转换为平稳序列。<br>销售值对数差分时间序列图如图3所示：</p>
+<p><div align="center"><img src="C:\Users\m\Documents\陆天航的R文件\时间序列\log_return.png"></div></p>
+<p><center>图3:对数收益率时间序列图</center><br>由上图可见，销售值时间序列具有明显的趋势变化，而对数差分则更接近于一个平稳过程。<br>对对数差分进行单位根检验(增强Dickey-Fuller检验)：<br>|Dickey-Fuller |Lag order | p-value |<br>| —- | —- | —- |<br>|-6.0997|6|0.01|<br>p值小于给定置信水平(0.05)拒绝预原假设。</p>
+<h2 id="3-2-模型识别"><a href="#3-2-模型识别" class="headerlink" title="3.2 模型识别"></a>3.2 模型识别</h2><p>对数差分的acf：</p>
+<p><div align="center"><img src="C:\Users\m\Documents\陆天航的R文件\时间序列\log_return_acf.png"></div></p>
+<p><center>图4:对数差分acf图</center><br>从acf来看，第2阶和第3阶是显著的，且3阶以后显著为0，采用3阶的MA模型具有一定的合理性，再来看样本的pacf：</p>
+<p><div align="center"><img src="C:\Users\m\Documents\陆天航的R文件\时间序列\log_return_pacf.png"></div></p>
+<p><center>图5:对数差分pacf图</center><br>从pacf来看，样本在滞后2，3阶显著，在滞后7阶显著，采用低阶AR模型也具有一定合理性。<br>样本eacf：</p>
+<p><div align="center"><img src="C:\Users\m\Documents\陆天航的R文件\时间序列\log_return_eacf.png"></div></p>
+<p><center>图6:对数差分eacf图</center><br>利用赤池信息准则判断选用的模型(均包含常数项)：<br>|模型 |AIC |<br>| —- | —- |<br>|MA(1)|-1748.65|<br>|MA(3)|-1787.89|<br>|ARMA(1,1)|-1760.68|<br>|ARMA(3,3)|-1790.11|<br>|ARMA(3,4)|-1801.7|<br>故使用ARMA(3,4)模型，但不排除低阶模型的可能性。</p>
+<h2 id="3-3-参数估计"><a href="#3-3-参数估计" class="headerlink" title="3.3 参数估计"></a>3.3 参数估计</h2><p>使用极大似然估计对ARMA(3,4)模型的参数进行拟合，得到：<br>||ar1|ar2 | ar3|ma1|ma2|ma3|ma4|intercept|<br>| —- | —- | —- | —- | —- | —- | —- | —- | —- |<br>|parameter|-0.7971|0.0224|0.5483|0.8775|0.1725|-0.1117|0.3253| 0.0026|<br>|se|0.1014|0.1425 |0.0972|0.1008|0.1562 |0.1319| 0.0625|0.0014|<br>其中，ar2,ma2,ma3及常数项不显著，故删除这些参数及常数项，再次训练模型，拟合的参数如下：<br>||ar1|ar2 | ar3|ma1|ma2|ma3|ma4|<br>| —- | —- | —- | —- | —- | —- | —- | —- |<br>|parameter|-0.6814|0|0.4190|0.6652|0|0| 0.3596|<br>|se|0.0816|0 |0.0492| 0.0662|0 |0|0.0705|<br>得到的AIC指标为 -1793.2，与之前相差不大。<br>故以上模型可表示为：</p>
+<script type="math/tex; mode=display">
+\\r_t=-0.6814r_{t-1}+0.4190r_{t-3}+\epsilon_t+0.6652\epsilon_{t-1}+0.3596\epsilon_{t-4}</script><p>其中$Var(\epsilon_t)=1.782\times e^{-4}$</p>
+<h2 id="3-4-模型诊断"><a href="#3-4-模型诊断" class="headerlink" title="3.4 模型诊断"></a>3.4 模型诊断</h2><p>残差，acf，及其Ljung-Box检验图分别如图7,8,9所示：</p>
+<p><div align="center"><img src="C:\Users\m\Documents\陆天航的R文件\时间序列\log_return_tsdiag.png"></div></p>
+<p><center>图7:残差图, 图8:残差acf图, 图9:残差Ljung-Box检验</center><br>从上面三张图可以看出，虽然在后期模型残差变化幅度增加且p值接近给定的置信水平，但基本符合理想情况。究其原因，是数据在时间为200处左右(图3)发生较大变化，当时正值2008年金融危机，对美国的传统制造业造成的巨大的冲击。</p>
+<h2 id="3-5-模型改进"><a href="#3-5-模型改进" class="headerlink" title="3.5 模型改进"></a>3.5 模型改进</h2><p>由模型诊断可以看出，该时间序列在2008年年底左右仍发生较大幅度的变化，为了消除金融危机对模型的影响，改用含干预分析的ARMA(3,4)模型从新建模。观察图3发现模型在第202个时间点发生骤降，而后数据呈现出缓慢上升的斜坡形状，故采用含一个单位时间延迟函数的干预模型。脉冲变量表示为:</p>
+<script type="math/tex; mode=display">
+P_t^T=\left\{
+\begin{aligned}
+1 && t=T \\
+0 && 其他 
+\end{aligned}
+\right.</script><p>其中T=202。<br>均值函数$m_t$的变化表示为：</p>
+<script type="math/tex; mode=display">
+m_t=\delta m_{t-1}+\omega P_t^T</script><p>且假定$m_0=0$。<br>将均值函数带入原来的模型再次估计参数:</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th></th>
+<th>ar1</th>
+<th>ar2</th>
+<th>ar3</th>
+<th>ma1</th>
+<th>ma2</th>
+<th>ma3</th>
+<th>ma4</th>
+<th>fc-AR1</th>
+<th>fc-MA0</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>parameter</td>
+<td>-0.5869</td>
+<td>0</td>
+<td>0.3914</td>
+<td>0.5314</td>
+<td>0</td>
+<td>0</td>
+<td>0.2073</td>
+<td>0.4844</td>
+<td>-0.0715</td>
+</tr>
+<tr>
+<td>se</td>
+<td>0.1826</td>
+<td>0</td>
+<td>0.0535</td>
+<td>0.1883</td>
+<td>0</td>
+<td>0</td>
+<td>0.1242</td>
+<td>0.1276</td>
+<td>0.0118</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>这里所得参数除ar1,ma4外显著不为0，这里选择不去除ar1和ma4项。模型得到的AIC指标为-1827.7，比原先有了明显改善。<br>以上模型可表示为：</p>
+<script type="math/tex; mode=display">
+\\r_t=-0.5869r_{t-1}+0.3914r_{t-3}+\epsilon_t+0.5314\epsilon_{t-1}+0.2073\epsilon_{t-4}+m_t</script><p>其中$m_t=0.4844m_{t-1}-0.0715P_t^T,Var(\epsilon_t)=1.577\times e^{-4}$</p>
+<p>将增加干预后的模型进行模型诊断，残差，acf，及其Ljung-Box检验图分别如图10,11,12所示：</p>
+<p><div align="center"><img src="C:\Users\m\Documents\陆天航的R文件\时间序列\log_return_tsdiag2.png"></div></p>
+<p><center>图10:残差图, 图11:残差acf图, 图12:残差Ljung-Box检验</center><br>从残差图可以看出，改进后的模型残差已无较大异常，其白噪声的性质已经确认Ljung-Box检验中的p值已经远离了5%的水平虚线，无显著证据否定残差序列在统计上的独立性。<br>原模型和改进后模型对训练数据的拟合如图13所示:</p>
+<p><div align="center"><img src="C:\Users\m\Documents\陆天航的R文件\时间序列\log_return_real_predict.png"></div></p>
+<p><center>图13:模型拟合图</center><br>从图中可见，改进后的模型在干预点附近比原模型有了更好的拟合结果。</p>
+<h2 id="3-6-模型预测"><a href="#3-6-模型预测" class="headerlink" title="3.6 模型预测"></a>3.6 模型预测</h2><p>将2018年1月1日-2019年1月1日的制造业的销售量做对数差分，作为模型的测试集，将建立好的干预模型预测测试集中的数据，每做完一次一步向前预测，将新的观测值加入模型的训练集，重新估计模型的参数。所得到的均方误差为1.64352e-06，模型的预测图如图14所示:</p>
+<p><div align="center"><img src="C:\Users\m\Documents\陆天航的R文件\时间序列\one_step_ahead.png"></div></p>
+<p><center>图14:模型预测图</center></p>
+<h1 id="四-模型总结"><a href="#四-模型总结" class="headerlink" title="四.模型总结"></a>四.模型总结</h1><p>本模型在‘统计’层面基本上完成了对美国传统制造业发展趋势的建模，在数据趋势层面，无论从acf值，pacf值还是从模型参数，都表明了销售值增长率具有3阶滞后相关的特点。在模型的预测层面，放弃了原始的多步预测方案，改为采用多次向前一步预测，使模型的预测能力具有大的提升，从而大体上预测了美国传统制造业在川普上台以及民粹主义兴起后颓势依旧的特征。同时模型在数据干预方面仍未能尽善尽美，只对于2008年年末的数据做了干预分析，而对2008年7月到年末的下滑走势未能完善地建模，有待建立更好的模型。</p>
+<h1 id="五-参考文献"><a href="#五-参考文献" class="headerlink" title="五.参考文献"></a>五.参考文献</h1></div>
+    
+      <!--
+<p class="post-copyright">若无特别说明，本文系原创，转载文章请注明来自<a class="post-copyright-link" href="/" title="InsistWu的个人博客" target="_blank">InsistWu的个人博客</a>，或链接上原文地址：<a class="post-copyright-link" href="http://yoursite.com/2019/07/23/time/" title="http://yoursite.com/2019/07/23/time/" target="_blank">http://yoursite.com/2019/07/23/time/</a></p>
+-->
+
+<p class="post-copyright">若无特别说明，本文系原创，转载文章请注明来自<a class="post-copyright-link" href="/" title="InsistWu的个人博客" target="_blank">InsistWu的个人博客</a></p>
+
+      
+      <div class="toc-wrapper">
+        <div class="toc-scroll">
+          <div class="toc-middle">
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#时间序列建模及应用课程论文"><span class="toc-text">时间序列建模及应用课程论文</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#一-问题描述"><span class="toc-text">一.问题描述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二-数据说明及来源"><span class="toc-text">二.数据说明及来源</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#三-建立模型"><span class="toc-text">三.建立模型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1-数据预处理-amp-平稳性识别"><span class="toc-text">3.1 数据预处理&amp;平稳性识别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-2-模型识别"><span class="toc-text">3.2 模型识别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-3-参数估计"><span class="toc-text">3.3 参数估计</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-4-模型诊断"><span class="toc-text">3.4 模型诊断</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-5-模型改进"><span class="toc-text">3.5 模型改进</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-6-模型预测"><span class="toc-text">3.6 模型预测</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#四-模型总结"><span class="toc-text">四.模型总结</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#五-参考文献"><span class="toc-text">五.参考文献</span></a></li></ol>
+          </div>
+        </div>
+      </div>
+    
+  
+</article>
+
+      <!--
+<footer class="footer">
+  <p class="footer-text">驱动于 <a href="https://hexo.io/zh-cn/" class="footer-link" title="Hexo">Hexo</a>，主题由 <a href="/about" class="footer-link" title="晨风明悟">晨风明悟</a> 设计移植而来</p>
+  <p class="footer-text">&copy; 2016 - 2017 <a href="/about" class="footer-link" title="晨风明悟">晨风明悟</a> 保留部分版权</p>
+  <p class="footer-text">苏ICP备17019692号-1</p>
+</footer>
+-->
+
+    </article>
+
+    <script src="/js/to-top.js"></script>
+    <script src="/js/search.js"></script>
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</body>
+</html>
