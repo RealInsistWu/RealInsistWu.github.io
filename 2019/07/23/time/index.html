@@ -217,7 +217,7 @@ m_t=\delta m_{t-1}+\omega P_t^T</script><p>且假定$m_0=0$。<br>将均值函�
         <!--
 
 -->
-
+<!--
 <div id="disqus_thread"></div>
 <script>
 
@@ -238,7 +238,43 @@ s.setAttribute('data-timestamp', +new Date());
 })();
 </script>
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-                            
+   -->
+
+
+<!--
+
+<div class="comment"></div>
+    <script>
+        new Valine({
+            // AV 对象来自上面引入av-min.js(老司机们不要开车➳♡゛扎心了老铁)
+            av: AV, 
+            el: '.comment', // 
+            app_id: '6ufaVq9wwUO5PyUXHnq5mk28-gzGzoHsz', // 这里填写上面得到的APP ID
+            app_key: 'JDiEX9SjGuO9G0Uzd9NTNCDk', // 这里填写上面得到的APP KEY
+            placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!' // [v1.0.7 new]留言框占位提示文字
+        });
+    </script>
+-->
+
+
+<h3> 驻足此地超过3s,是不是有话要说~🙈</h3>
+  <div class="comments" id="comments"></div>
+    
+    <!--Leancloud 操作库:-->
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <!--Valine 的核心代码库:-->
+    <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+    <script>
+       new Valine({
+            el: '.comments',
+            notify: true, // 邮件提醒 v1.1.4新增，下一步中有具体的邮箱设置
+            verify: true,
+            app_id: '6ufaVq9wwUO5PyUXHnq5mk28-gzGzoHsz',
+            app_key: 'JDiEX9SjGuO9G0Uzd9NTNCDk',
+      placeholder: '评论时填写邮箱仅为方便收到回复提醒，无其他用途'           
+        });
+    </script> 
+                   
       
       <div class="toc-wrapper">
         <div class="toc-scroll">
